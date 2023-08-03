@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Form</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #fbf2fb; margin: 0; padding: 0;">
+  <div style="max-width: 500px; margin: 40px auto; background-color: #fef9fc; padding: 20px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h2 style="text-align: center;">Feedback Form</h2>
+    <form id="feedbackForm" style="display: flex; flex-direction: column;">
+      <label for="name" style="font-weight: bold; margin-bottom: 5px;">Name:</label>
+      <input type="text" id="name" required style="margin-bottom: 10px; padding: 8px; border: 1px solid #5d9925; border-radius: 4px;">
+      
+      <label for="email" style="font-weight: bold; margin-bottom: 5px;">Email:</label>
+      <input type="email" id="email" required style="margin-bottom: 10px; padding: 8px; border: 1px solid #1a7ead; border-radius: 4px;">
+      
+      <label for="Suggestions" style="font-weight: bold; margin-bottom: 5px;">Suggestions:</label>
+      <textarea id="Suggestions" required style="margin-bottom: 10px; padding: 8px; border: 1px solid #14335b; border-radius: 4px;"></textarea>
+      
+      <label for="rating" style="font-weight: bold; margin-bottom: 5px;">Rating:</label>
+      <div style="display: flex; justify-content: space-between;">
+        <input type="radio" id="rating1" name="rating" value="1">
+        <label for="rating1">1</label>
+        
+        <input type="radio" id="rating2" name="rating" value="2">
+        <label for="rating2">2</label>
+        
+        <input type="radio" id="rating3" name="rating" value="3">
+        <label for="rating3">3</label>
+        
+        <input type="radio" id="rating4" name="rating" value="4">
+        <label for="rating4">4</label>
+        
+        <input type="radio" id="rating5" name="rating" value="5">
+        <label for="rating5">5</label>
+        
+      </div>
+      <br>
+      <button type="submit" style="background-color: #a6849c; color: #ffffff; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Submit Feedback</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData);
+      console.log(data);
+      event.target.reset();
+    });
+  </script>
+</body>
+</html>
